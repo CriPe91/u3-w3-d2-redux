@@ -2,7 +2,7 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getJobs, setQueryAction } from "../src/redux/actions";
+import { getJobs, setQueryAction } from "../redux/actions";
 
 const MainSearch = () => {
   // const [query, setQuery] = useState("");

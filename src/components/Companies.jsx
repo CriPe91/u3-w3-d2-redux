@@ -2,7 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavoritesAction, removeToFavoritesAction } from "../src/redux/actions";
+import { addToFavouritesAction, removeFromFavouritesAction } from "../redux/actions";
 
 const Companies = ({ company }) => {
   const dispatch = useDispatch();
@@ -14,9 +14,9 @@ const Companies = ({ company }) => {
     <Row className="mx-0 mt-3 p-3" style={{ border: "1px solid #00000033", borderRadius: 4 }}>
       <Col xs={3}>
         {isCompanyFavourited ? (
-          <HeartFill className="me-2 text-danger" onClick={() => dispatch(removeToFavoritesAction(company))} />
+          <HeartFill className="me-2 text-danger" onClick={() => dispatch(removeFromFavouritesAction(company))} />
         ) : (
-          <Heart className="me-2" onClick={() => dispatch(addToFavoritesAction(company))} />
+          <Heart className="me-2" onClick={() => dispatch(addToFavouritesAction(company))} />
         )}
         <Link to={`/${company}`}>{company}</Link>
       </Col>

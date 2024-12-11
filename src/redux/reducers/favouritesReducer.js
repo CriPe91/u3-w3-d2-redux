@@ -8,13 +8,13 @@ const favouritesReducer = (state = initialState, action) => {
     case ADD_TO_FAVOURITES:
       return {
         ...state,
-        content: [...state.favourites.content, action.payload],
+        content: [...state.content, action.payload],
       };
 
     case REMOVE_FROM_FAVOURITES:
       return {
         ...state,
-        content: [state.favourites.content.filter((company) => company !== action.payload)],
+        content: state.content.filter((company) => company !== action.payload),
       };
 
     default:
